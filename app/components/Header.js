@@ -18,6 +18,12 @@ class Header extends Component {
           className="btn btn-link btn-lg">
           home
         </Link>
+        {`|`}    
+        <Link 
+          to='/Courses' 
+          className="btn btn-link btn-lg">
+          courses
+        </Link>
       </div>
     )
   }

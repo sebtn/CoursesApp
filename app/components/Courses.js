@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
+import Header from './Header'
+
 class Courses extends Component {
 /*--------------------------------------------------*/
   constructor(props, context) {
@@ -28,6 +30,7 @@ class Courses extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h1>This is courses</h1>
         <h3>Add a course</h3>
         <input 
