@@ -3,16 +3,20 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 
-class Home extends Component {
+class Header extends Component {
   render() {
     return (
-      <div className="jumbotron">
-        <h1>This is Home, hooked on js + router</h1>
-        <p>React, Redux and ES6 in responsive webApp </p>
+      <div className="header-container">
         <Link 
           to='/About' 
-          className="btn btn-primary btn-lg">
-          Learn More 
+          className="btn btn-link btn-lg">
+          about
+        </Link>    
+        {`|`}    
+        <Link 
+          to='/Home' 
+          className="btn btn-link btn-lg">
+          home
         </Link>
       </div>
     )
@@ -20,4 +24,4 @@ class Home extends Component {
 }
 
 /*--------------------------------------------------*/
-export default connect()(Home)
+export default connect()(Header)
