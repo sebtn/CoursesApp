@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import {Route, Router, IndexRoute, hashHistory, Link} from 'react-router'
+import {createStore, applyMiddleware, compose} from 'redux'
+import thunk from 'redux-thunk'
 
 import  '././styles/app.scss' 
+import Main from './components/Main'
 
 
-'use strict'
-
-ReactDOM.render(<h3>Using Redux</h3>, document.getElementById('root'))
+ReactDOM.render(<Main />, document.getElementById('root'))
