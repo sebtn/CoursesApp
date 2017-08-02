@@ -4,6 +4,9 @@
 │   │   └── index.js
 │   ├── app.js
 │   ├── components
+│   │   ├── About.js
+│   │   ├── Header.js
+│   │   ├── Home.js
 │   │   └── Main.js
 │   ├── containers
 │   │   └── Courses.js
@@ -15,9 +18,13 @@
 │   │   └── configureStore.js
 │   ├── styles
 │   │   ├── app.scss
-│   │   └── base
-│   │       ├── _core.scss
-│   │       └── _variables.scss
+│   │   ├── base
+│   │   │   ├── _core.scss
+│   │   │   └── _variables.scss
+│   │   └── components
+│   │       ├── About.scss
+│   │       ├── Header.scss
+│   │       └── Home.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
@@ -31,4 +38,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 19 files
+13 directories, 25 files
