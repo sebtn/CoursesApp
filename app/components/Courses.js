@@ -9,7 +9,11 @@ class Courses extends Component {
   constructor(props, context) {
     super(props, context)
     this.state ={
+<<<<<<< HEAD
       course: { title: '' }
+=======
+      course: { title: null }
+>>>>>>> 0dfd5b62fc6d29ef227ef6f3c110cadc2318c963
     }
   }
 
