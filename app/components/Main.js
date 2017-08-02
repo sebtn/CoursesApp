@@ -6,11 +6,11 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <h1>This is main</h1>
+        <h1>This is main, hooked on js</h1>
       </div>
     )
   }
 }
 
-// export default connect()(Main)
-export default (Main)
+/*--------------------------------------------------*/
+export default connect()(Main)
