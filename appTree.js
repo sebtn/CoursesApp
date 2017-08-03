@@ -10,6 +10,8 @@
 │   ├── app.js
 │   ├── components
 │   │   ├── About.js
+│   │   ├── CourseItem.js
+│   │   ├── CourseList.js
 │   │   ├── Courses.js
 │   │   ├── Header.js
 │   │   ├── Home.js
@@ -26,8 +28,11 @@
 │   │   │   └── _variables.scss
 │   │   └── components
 │   │       ├── About.scss
+│   │       ├── CourseList.scss
+│   │       ├── Courses.scss
 │   │       ├── Header.scss
-│   │       └── Home.scss
+│   │       ├── Home.scss
+│   │       └── Main.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
@@ -41,4 +46,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 29 files
+12 directories, 34 files
