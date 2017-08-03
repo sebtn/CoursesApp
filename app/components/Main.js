@@ -9,7 +9,7 @@ import Header from './Header'
 class Main extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="Main-container">
         <Header />
         <h1>This is main, hooked on js</h1>
         {this.props.children}

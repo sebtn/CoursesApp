@@ -1,0 +1,15 @@
+table {
+  margin: 1.5rem;
+  /*text-align: center;*/
+  /*align-content: center;*/
+  & tr {
+    border-bottom: 1px solid #333;
+    height: 2rem;
+  }
+  & td, th {
+    padding:0.5rem ;
+  }
+  & a {
+    padding:0 1.25rem ;
+  }
+}

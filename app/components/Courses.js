@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux'
 
 import Header from './Header'
 import {createCourse} from '../actions/index'
+import CourseList from './CourseList'
 
 class Courses extends Component {
 /*--------------------------------------------------*/
@@ -25,10 +26,10 @@ class Courses extends Component {
   render() {
     const {courses} = this.props
     return (
-      <div>
+      <div className="courses-container container-fluid">
         <Header />
-        <h1>This is courses</h1>
-        { courses.map(this.renderCourse) }
+        <h1 className="courses-title">This is courses</h1>
+         <CourseList courses={courses} /> 
       </div>
     )
   }
