@@ -9,7 +9,7 @@ class Courses extends Component {
 /*--------------------------------------------------*/
   constructor(props, context) {
     super(props, context)
-    this.state ={
+    this.state = {
       course: { title: '' }
     }
   }
@@ -24,8 +24,7 @@ class Courses extends Component {
 
 /*--------------------------------------------------*/
   onClickSave = () => {
-    let {dispatch} = this.props
-    dispatch(createCourse(this.state.course))
+    this.props.createCourse(this.state.course)
   }
 
 /*--------------------------------------------------*/
@@ -73,6 +72,10 @@ let mapStateToProps = (state) => {
 }
 
 /*--------------------------------------------------*/
-// let mapDispatchToProps = () => {}
+let mapDispatchToProps = (dispatch) => {
+  return {
+    createCourse: course => dispatch(createCourse(course))
+  }
+}
 /*--------------------------------------------------*/
-export default connect(mapStateToProps)(Courses)
+export default connect(mapStateToProps, mapDispatchToProps)(Courses)
