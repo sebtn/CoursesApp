@@ -62,8 +62,8 @@ class Courses extends Component {
 
 /*--------------------------------------------------*/
 Courses.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  courses: PropTypes.array.isRequired
+  courses: PropTypes.array.isRequired,
+  createCourse:  PropTypes.func.isRequired
 }
 
 /*--------------------------------------------------*/
@@ -77,5 +77,6 @@ let mapDispatchToProps = (dispatch) => {
     createCourse: course => dispatch(createCourse(course))
   }
 }
+
 /*--------------------------------------------------*/
 export default connect(mapStateToProps, mapDispatchToProps)(Courses)
