@@ -1,7 +1,12 @@
 .
 ├── app
 │   ├── actions
+│   │   ├── actionTypes.js
 │   │   └── index.js
+│   ├── api
+│   │   ├── delay.js
+│   │   ├── mockAuthorApi.js
+│   │   └── mockCourseApi.js
 │   ├── app.js
 │   ├── components
 │   │   ├── About.js
@@ -36,4 +41,4 @@
 ├── server.js
 └── webpack.config.js
 
-11 directories, 25 files
+12 directories, 29 files
