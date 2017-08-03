@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
 import Header from './Header'
+import {createCourse} from '../actions/index'
 
 class Courses extends Component {
 /*--------------------------------------------------*/
@@ -23,15 +24,27 @@ class Courses extends Component {
 
 /*--------------------------------------------------*/
   onClickSave = () => {
-    alert(`saving: ${this.state.course.title}`)
+    let {dispatch} = this.props
+    dispatch(createCourse(this.state.course))
+  }
+
+/*--------------------------------------------------*/
+  renderCourse = (course, index) => {
+    return (
+      <div key={index}>
+        {course.title}
+      </div>
+    )
   }
 
 /*--------------------------------------------------*/
   render() {
+    const {courses} = this.props
     return (
       <div>
         <Header />
         <h1>This is courses</h1>
+        { courses.map(this.renderCourse) }
         <h3>Add a course</h3>
         <input 
           type="text"
@@ -49,4 +62,17 @@ class Courses extends Component {
 }
 
 /*--------------------------------------------------*/
-export default connect()(Courses)
+Courses.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  courses: PropTypes.array.isRequired
+}
+
+/*--------------------------------------------------*/
+let mapStateToProps = (state) => {
+  return { courses: state.courses }
+}
+
+/*--------------------------------------------------*/
+// let mapDispatchToProps = () => {}
+/*--------------------------------------------------*/
+export default connect(mapStateToProps)(Courses)
