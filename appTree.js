@@ -10,12 +10,16 @@
 │   ├── app.js
 │   ├── components
 │   │   ├── About.js
+│   │   ├── CourseForm.js
 │   │   ├── CourseItem.js
 │   │   ├── CourseList.js
 │   │   ├── Courses.js
 │   │   ├── Header.js
 │   │   ├── Home.js
-│   │   └── Main.js
+│   │   ├── Main.js
+│   │   ├── ManageCourse.js
+│   │   ├── SelectInput.js
+│   │   └── TextInput.js
 │   ├── reducers
 │   │   ├── courseReducer.js
 │   │   └── index.js
@@ -28,11 +32,13 @@
 │   │   │   └── _variables.scss
 │   │   └── components
 │   │       ├── About.scss
+│   │       ├── CourseForm.scss
 │   │       ├── CourseList.scss
 │   │       ├── Courses.scss
 │   │       ├── Header.scss
 │   │       ├── Home.scss
-│   │       └── Main.scss
+│   │       ├── Main.scss
+│   │       └── ManageCourse.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
@@ -46,4 +52,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 34 files
+12 directories, 40 files
