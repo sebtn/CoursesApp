@@ -8,7 +8,7 @@ import Header from './Header'
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="home-container container-fluid">
         <Header />
         <div className="jumbotron">
           <h1>This is Home, hooked on js + router</h1>

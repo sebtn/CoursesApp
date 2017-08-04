@@ -1,4 +1,4 @@
-### Redux, ReactCoursera clon
+### Redux, React Coursera clon
 -----
 + Uses webpack and express to serve devEnv
 + Node js and react for UI designing

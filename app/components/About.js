@@ -7,7 +7,7 @@ import Header from './Header'
 class About extends Component {
   render() {
     return (
-      <div className="about-container">
+      <div className="about-container container-fluid">
         <Header />
         <h1>This is About, about to be but, eh!</h1>
         <p>React, Redux as tooling for cool apps</p>
