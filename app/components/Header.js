@@ -23,6 +23,12 @@ class Header extends Component {
           to='/Courses' 
           className="btn btn-link btn-lg">
           courses
+        </Link>       
+        {`|`}    
+        <Link 
+          to='/Course' 
+          className="btn btn-link btn-lg">
+          course
         </Link>
       </div>
     )
