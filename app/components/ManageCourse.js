@@ -4,11 +4,16 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
 import Header from './Header'
+import CourseForm from './CourseForm'
 
 class ManageCourse extends Component {
 /*--------------------------------------------------*/
   constructor(props, context) {
     super(props, context)
+    this.state = {
+      course: Object.assign({}, this.props.course),
+      errors: {}
+    }
   }
 
 /*--------------------------------------------------*/
@@ -16,6 +21,10 @@ class ManageCourse extends Component {
     return (
       <div className="manage-course-container container-fluid">
         <Header />
+        <CourseForm 
+        allAuthors={[]}
+        course={this.state.course}
+        errors={this.state.errors}/>
       </div>
     )
   }
@@ -23,12 +32,15 @@ class ManageCourse extends Component {
 
 /*--------------------------------------------------*/
 ManageCourse.propTypes = {
-  // ManageCourse: PropTypes.array.isRequired,
+  course: PropTypes.object.isRequired,
 }
 
 /*--------------------------------------------------*/
 let mapStateToProps = (state) => {
-  return { state: state }
+  let course = {
+    id: '', watchHref: '', title: '', authorId: '', length: '', category: ''
+  }
+  return { course: course }
 }
 
 /*--------------------------------------------------*/
