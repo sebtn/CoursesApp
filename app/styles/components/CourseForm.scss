@@ -1,5 +1,9 @@
 .form-container{
-  & form, input{
+  width: 100%;
+  & form {
     width: 100%;
+    & input, TextInput, SelectInput {
+      width: 100%;
+    }
   }
 }
