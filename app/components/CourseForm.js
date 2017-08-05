@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import TextInput from './TextInput'
 import SelectInput from './SelectInput'
 
-const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) =>{
+const CourseForm = ({field, course, allAuthors, onSave, onChange, loading, errors}) =>{
   return (
     <div className="form-container">
-      <form>
+      <form value={field}>
       <h1>Manage Course</h1>
         <TextInput 
           name="title"

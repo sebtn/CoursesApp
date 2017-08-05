@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux'
 
 import Header from './Header'
 import CourseForm from './CourseForm'
+import {saveCourse} from '../actions/index'
 
 class ManageCourse extends Component {
 /*--------------------------------------------------*/
@@ -17,6 +18,20 @@ class ManageCourse extends Component {
   }
 
 /*--------------------------------------------------*/
+  updateCourseState = (event) => {
+    let field = event.target.name
+    let course = this.state.course
+    course[field] = event.target.value
+    return this.setState( {course: course} )
+  }
+
+/*--------------------------------------------------*/
+  saveCourse = (event) => {
+    event.preventDefault()
+    this.props.saveCourse(this.state.course)
+  }
+
+/*--------------------------------------------------*/
   render() {
     return (
       <div className="manage-course-container container-fluid">
@@ -24,7 +39,9 @@ class ManageCourse extends Component {
         <CourseForm 
           allAuthors={this.props.authors}
           course={this.state.course}
-          errors={this.state.errors} />
+          errors={this.state.errors} 
+          onChange={this.updateCourseState} 
+          onSave={this.saveCourse}/>
       </div>
     )
   }
@@ -56,9 +73,10 @@ let mapStateToProps = (state) => {
 /*--------------------------------------------------*/
 let mapDispatchToProps = (dispatch) => {
   return {
-    // createCourse: bindActionCreators(createCourse, dispatch)
+    saveCourse: bindActionCreators(saveCourse, dispatch)
+    
   }
 }
 
 /*--------------------------------------------------*/
-export default connect(mapStateToProps)(ManageCourse)
+export default connect(mapStateToProps, mapDispatchToProps)(ManageCourse)

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {hashHistory} from 'react-router'
 import {bindActionCreators} from 'redux'
 
 import Header from './Header'
@@ -23,12 +24,22 @@ class Courses extends Component {
   }
 
 /*--------------------------------------------------*/
+  redirectToCoursePage =() => {
+    hashHistory.push('/course')
+  }
+
+/*--------------------------------------------------*/
   render() {
     const {courses} = this.props
     return (
       <div className="courses-container container-fluid">
         <Header />
         <h1 className="courses-title">This is courses</h1>
+        <input 
+          type="submit" 
+          value="Add Course"
+          className="btn btn-primary"
+          onClick={this.redirectToCoursePage} />
          <CourseList courses={courses} /> 
       </div>
     )
