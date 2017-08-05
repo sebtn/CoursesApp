@@ -24,7 +24,7 @@ class Courses extends Component {
   }
 
 /*--------------------------------------------------*/
-  redirectToCoursePage =() => {
+  redirectToCoursePage = () => {
     hashHistory.push('/course')
   }
 

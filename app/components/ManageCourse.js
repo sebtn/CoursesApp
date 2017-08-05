@@ -29,6 +29,7 @@ class ManageCourse extends Component {
   saveCourse = (event) => {
     event.preventDefault()
     this.props.saveCourse(this.state.course)
+    this.context.router.push('/courses') // other way of re routing
   }
 
 /*--------------------------------------------------*/
@@ -55,10 +56,17 @@ ManageCourse.propTypes = {
 }
 
 /*--------------------------------------------------*/
-let mapStateToProps = (state) => {
-  let course = {
-    id: '', watchHref: '', title: '', authorId: '', length: '', category: ''
-  }
+/*Using react router context 
+to be available this.context.router avoiding
+boilerplate, used to re route in this case */
+ManageCourse.contextTypes = {
+  router: PropTypes.object.isRequired
+}
+
+/*--------------------------------------------------*/
+let mapStateToProps = (state, ownProps) => {
+  let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''}
+  
   const listAuthorsFormatted = state.authors.map(author => {
     return {
       value: author.id,

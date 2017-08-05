@@ -17,9 +17,9 @@ const authors = [
     lastName: 'Ch'
   },
   {
-    id: 'cory-house',
-    firstName: 'Cory',
-    lastName: 'House'
+    id: 'Martina-LaVelera',
+    firstName: 'Martina',
+    lastName: 'LaVelera'
   }
 ]
 
