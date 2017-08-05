@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import TextInput from './TextInput'
 import SelectInput from './SelectInput'
 
-const CourseForm = ({field, course, allAuthors, onSave, onChange, loading, errors}) =>{
+const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) =>{
   return (
     <div className="form-container">
-      <form value={field}>
+      <form >
       <h1>Manage Course</h1>
         <TextInput 
           name="title"
@@ -20,7 +20,7 @@ const CourseForm = ({field, course, allAuthors, onSave, onChange, loading, error
           name="authorId"
           label="Author"
           value={course.authorId}
-          defualtOptions="Select Author"
+          defaultOption="Select Author"
           options={allAuthors}
           onChange={onChange}
           error={errors.authorId} />

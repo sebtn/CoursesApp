@@ -9,14 +9,15 @@ const SelectInput = ({name, label, onChange, defaultOption, value, error, option
         <select 
           name={name}
           value={value}
-          className="from-control">
+          onChange={onChange}
+          className="form-control" >
           <option value="">{defaultOption}</option>
-          { options.map( (option) => {
-            return <option 
-              key={option.value} 
-              value={option.value}>
-              {option.text}
-            </option>
+            { options.map( (option) => {
+              return <option 
+                key={option.value} 
+                value={option.value}>
+                {option.text}
+              </option>
           }) }
         </select>
           { error && <div className="alert alert-danger">{error}</div>}

@@ -15,6 +15,11 @@ const authors = [
     id: 'Lil-machines',
     firstName: 'Lil',
     lastName: 'Ch'
+  },
+  {
+    id: 'cory-house',
+    firstName: 'Cory',
+    lastName: 'House'
   }
 ]
 
@@ -33,7 +38,7 @@ class AuthorApi {
   }
   //save
   static saveAuthor(author) {
-    author = Object.assign({}, author)
+  author = Object.assign({}, author)
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         //server side validation mock

@@ -51,6 +51,7 @@ class ManageCourse extends Component {
 ManageCourse.propTypes = {
   course: PropTypes.object.isRequired,
   authors: PropTypes.array.isRequired,
+  saveCourse: PropTypes.func.isRequired // from actions
 }
 
 /*--------------------------------------------------*/
@@ -74,7 +75,6 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     saveCourse: bindActionCreators(saveCourse, dispatch)
-    
   }
 }
 
