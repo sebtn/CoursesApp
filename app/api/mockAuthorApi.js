@@ -1,19 +1,19 @@
-import delay from 'delay'
+import delay from './delay'
 
 const authors = [
   {
     id: 'Seb-machines',
-    firstName: 'Seb'
+    firstName: 'Seb',
     lastName: 'Ag'
   },
   {
     id: 'Cat-machines',
-    firstName: 'ignu'
+    firstName: 'ignu',
     lastName: 'Fire'
   },
   {
     id: 'Lil-machines',
-    firstName: 'Lil'
+    firstName: 'Lil',
     lastName: 'Ch'
   }
 ]

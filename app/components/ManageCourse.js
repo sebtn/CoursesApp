@@ -22,9 +22,9 @@ class ManageCourse extends Component {
       <div className="manage-course-container container-fluid">
         <Header />
         <CourseForm 
-        allAuthors={[]}
-        course={this.state.course}
-        errors={this.state.errors}/>
+          allAuthors={this.props.authors}
+          course={this.state.course}
+          errors={this.state.errors} />
       </div>
     )
   }
@@ -33,6 +33,7 @@ class ManageCourse extends Component {
 /*--------------------------------------------------*/
 ManageCourse.propTypes = {
   course: PropTypes.object.isRequired,
+  authors: PropTypes.array.isRequired,
 }
 
 /*--------------------------------------------------*/
@@ -40,7 +41,16 @@ let mapStateToProps = (state) => {
   let course = {
     id: '', watchHref: '', title: '', authorId: '', length: '', category: ''
   }
-  return { course: course }
+  const listAuthorsFormatted = state.authors.map(author => {
+    return {
+      value: author.id,
+      text: author.firstName + ' ' + author.lastName
+    }
+  })
+  return { 
+    course: course,
+    authors: listAuthorsFormatted
+ }
 }
 
 /*--------------------------------------------------*/

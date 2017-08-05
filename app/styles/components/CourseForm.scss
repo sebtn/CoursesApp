@@ -1,8 +1,10 @@
 .form-container{
+  color:#555;
   width: 100%;
   & form {
+    margin: 2rem;
     width: 100%;
-    & input, TextInput, SelectInput {
+    & input, TextInput {
       width: 100%;
     }
   }

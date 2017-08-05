@@ -8,13 +8,14 @@ import thunk from 'redux-thunk'
 import  './styles/app.scss' 
 import router from './router/index'
 import reducers from './reducers/index'
-import {loadCourses} from  './actions/index'
+import { loadCourses, loadAuthors } from  './actions/index'
 
 const creatMiddleware = applyMiddleware(thunk)(createStore)
 const devExtension = compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
 const store = creatMiddleware(reducers, devExtension)
 
 store.dispatch(loadCourses())
+store.dispatch(loadAuthors())
 
 ReactDOM.render(
   <Provider store={store}>
