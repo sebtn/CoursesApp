@@ -21,8 +21,10 @@
 │   │   ├── SelectInput.js
 │   │   └── TextInput.js
 │   ├── reducers
+│   │   ├── authorReducer.js
 │   │   ├── courseReducer.js
-│   │   └── index.js
+│   │   ├── index.js
+│   │   └── initialState.js
 │   ├── router
 │   │   └── index.js
 │   ├── styles
@@ -54,4 +56,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 42 files
+12 directories, 44 files
