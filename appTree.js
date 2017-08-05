@@ -38,7 +38,9 @@
 │   │       ├── Header.scss
 │   │       ├── Home.scss
 │   │       ├── Main.scss
-│   │       └── ManageCourse.scss
+│   │       ├── ManageCourse.scss
+│   │       ├── SelectInput.scss
+│   │       └── TextInput.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
@@ -52,4 +54,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 40 files
+12 directories, 42 files
