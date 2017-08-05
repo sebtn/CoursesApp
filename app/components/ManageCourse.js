@@ -12,8 +12,15 @@ class ManageCourse extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      course: Object.assign({}, this.props.course),
+      course: Object.assign({}, props.course),
       errors: {}
+    }
+  }
+
+/*--------------------------------------------------*/
+  componentWillReceiveProps = (nextProps) => {
+    if (this.props.course.id != nextProps.course.id) {
+      this.setState({ course: Object.assign({}, nextProps.course) })
     }
   }
 
@@ -64,9 +71,21 @@ ManageCourse.contextTypes = {
 }
 
 /*--------------------------------------------------*/
+let getCourseById = (courses, id) => {
+  const course = courses.filter(course => course.id == id)
+  // first and only element from returned array 
+  if (course) return course[0]
+  return null 
+}
+
+/*--------------------------------------------------*/
 let mapStateToProps = (state, ownProps) => {
+  // from router /course/:id
+  const courseId = ownProps.params.id 
   let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''}
-  
+  if (courseId && state.courses.length > 0) {
+    course = getCourseById(state.courses, courseId)
+  }
   const listAuthorsFormatted = state.authors.map(author => {
     return {
       value: author.id,
