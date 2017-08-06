@@ -33,7 +33,7 @@ class Courses extends Component {
     const {courses} = this.props
     return (
       <div className="courses-container container-fluid">
-        <Header />
+        <Header loading={this.props.loading} />
         <h1 className="courses-title">This is courses</h1>
         <input 
           type="submit" 
@@ -54,7 +54,10 @@ Courses.propTypes = {
 
 /*--------------------------------------------------*/
 let mapStateToProps = (state) => {
-  return { courses: state.courses }
+  return { 
+    courses: state.courses,
+    loading: state.ajaxCallsInProgress > 0,
+  }
 }
 
 /*--------------------------------------------------*/

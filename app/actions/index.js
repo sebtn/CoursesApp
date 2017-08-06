@@ -2,6 +2,14 @@ import * as types from './actionTypes'
 import CourseApi from '../api/mockCourseApi'
 import AuthorApi from '../api/mockAuthorApi'
 
+/*AJAX action */
+/*---------------------------------------------------------------*/
+export let beginAjaxCall = () => {
+  return {
+    type: types.BEGIN_AJAX_CALL
+  }
+}
+
 /*Courses*/
 /*---------------------------------------------------------------*/
 export let loadCoursesSuccess = (courses) => {
@@ -42,6 +50,7 @@ export let loadAuthorsSucces = (authors) => {
 /*---------------------------------------------------------------*/
 export let loadCourses = () => {
   return (dispatch) => {
+    dispatch(beginAjaxCall())
     return CourseApi.getAllCourses()
     .then( courses => { dispatch(loadCoursesSuccess(courses)) })
     .catch( error => { throw(error) })
@@ -51,6 +60,7 @@ export let loadCourses = () => {
 /*---------------------------------------------------------------*/
 export let saveCourse = (course) => {
   return (dispatch) => {
+    dispatch(beginAjaxCall())
     return CourseApi.saveCourse(course)
     .then( course => {
       course.id ? dispatch( updateCourseSuccess(course) ) :
@@ -63,6 +73,7 @@ export let saveCourse = (course) => {
 /*---------------------------------------------------------------*/
 export let loadAuthors = () => {
   return (dispatch) => {
+    dispatch(beginAjaxCall())
     return AuthorApi.getAllAuthors()
     .then( authors => { dispatch(loadAuthorsSucces(authors)) })
     .catch( error => { throw(error) })

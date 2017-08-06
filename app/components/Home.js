@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container container-fluid">
-        <Header />
+        <Header loading={this.props.loading}/>
         <div className="jumbotron">
           <h1>This is Home, hooked on js + router</h1>
           <p>React, Redux and ES6 in responsive webApp </p>
@@ -25,4 +25,11 @@ class Home extends Component {
 }
 
 /*--------------------------------------------------*/
-export default connect()(Home)
+let mapStateToProps = (state) => {
+  return {
+    loading: state.ajaxCallsInProgress > 0,
+  }
+}
+
+/*--------------------------------------------------*/
+export default connect(mapStateToProps)(Home)

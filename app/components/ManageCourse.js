@@ -43,7 +43,7 @@ class ManageCourse extends Component {
   render() {
     return (
       <div className="manage-course-container container-fluid">
-        <Header />
+        <Header loading={this.props.loading}/>
         <CourseForm 
           allAuthors={this.props.authors}
           course={this.state.course}
@@ -94,7 +94,8 @@ let mapStateToProps = (state, ownProps) => {
   })
   return { 
     course: course,
-    authors: listAuthorsFormatted
+    authors: listAuthorsFormatted,
+    loading: state.ajaxCallsInProgress > 0,
  }
 }
 

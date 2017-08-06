@@ -1,5 +1,6 @@
 /* How store is initialized */
 export default {
   authors: [],
-  courses: []
+  courses: [],
+  ajaxCallsInProgress: 0
 }

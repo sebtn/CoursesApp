@@ -8,8 +8,8 @@ class About extends Component {
   render() {
     return (
       <div className="about-container container-fluid">
-        <Header />
-        <h1>This is About, about to be but, eh!</h1>
+        <Header loading={this.props.loading}/>
+        <h1>This is About, about to be but, Canadian eh!</h1>
         <p>React, Redux as tooling for cool apps</p>
         <p>Other libraries</p>
       </div>
@@ -18,4 +18,10 @@ class About extends Component {
 }
 
 /*--------------------------------------------------*/
-export default connect()(About)
+let mapStateToProps = (state) => {
+  return {
+    loading: state.ajaxCallsInProgress > 0,
+  }
+}
+/*--------------------------------------------------*/
+export default connect(mapStateToProps)(About)
