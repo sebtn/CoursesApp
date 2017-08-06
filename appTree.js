@@ -16,11 +16,13 @@
 │   │   ├── Courses.js
 │   │   ├── Header.js
 │   │   ├── Home.js
+│   │   ├── LoadingLogo.js
 │   │   ├── Main.js
 │   │   ├── ManageCourse.js
 │   │   ├── SelectInput.js
 │   │   └── TextInput.js
 │   ├── reducers
+│   │   ├── ajaxStatusReducer.js
 │   │   ├── authorReducer.js
 │   │   ├── courseReducer.js
 │   │   ├── index.js
@@ -56,4 +58,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 44 files
+12 directories, 46 files
