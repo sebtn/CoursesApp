@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
+import toastr from'toastr'
 
 import Header from './Header'
 import CourseForm from './CourseForm'
@@ -38,12 +39,17 @@ class ManageCourse extends Component {
     event.preventDefault()
     this.setState({ saving: true })
     this.props.saveCourse(this.state.course)
-    .then(() => this.redirect()) // other way of re routing
+    .then( () => this.redirect() ) // other way of re routing
+    .catch(error => {
+      toastr.error(error)
+      this.setState({ saving: false })
+    })
   }
 
 /*--------------------------------------------------*/
   redirect = () => {
     this.setState({ saving: false })
+    toastr.success('Course saved')
     this.context.router.push('/courses')
   }
 

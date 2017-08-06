@@ -9,6 +9,11 @@ export let beginAjaxCall = () => {
     type: types.BEGIN_AJAX_CALL
   }
 }
+export let ajaxCallError = () => {
+  return {
+    type: types.AJAX_CALL_ERROR
+  }
+}
 
 /*Courses*/
 /*---------------------------------------------------------------*/
@@ -66,7 +71,10 @@ export let saveCourse = (course) => {
       course.id ? dispatch( updateCourseSuccess(course) ) :
       dispatch( createCourseSuccess(course) )
     })
-    .catch( error => { throw(error) })
+    .catch( error => {
+      dispatch(ajaxCallError(error))
+      throw(error) 
+   })
   }
 }
 
