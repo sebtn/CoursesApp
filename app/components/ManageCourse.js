@@ -36,7 +36,12 @@ class ManageCourse extends Component {
   saveCourse = (event) => {
     event.preventDefault()
     this.props.saveCourse(this.state.course)
-    this.context.router.push('/courses') // other way of re routing
+    .then(() => this.redirect()) // other way of re routing
+  }
+
+/*--------------------------------------------------*/
+  redirect = () => {
+    this.context.router.push('/courses')
   }
 
 /*--------------------------------------------------*/
