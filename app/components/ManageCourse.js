@@ -13,7 +13,8 @@ class ManageCourse extends Component {
     super(props, context)
     this.state = {
       course: Object.assign({}, props.course),
-      errors: {}
+      errors: {}, 
+      saving: false
     }
   }
 
@@ -35,12 +36,14 @@ class ManageCourse extends Component {
 /*--------------------------------------------------*/
   saveCourse = (event) => {
     event.preventDefault()
+    this.setState({ saving: true })
     this.props.saveCourse(this.state.course)
     .then(() => this.redirect()) // other way of re routing
   }
 
 /*--------------------------------------------------*/
   redirect = () => {
+    this.setState({ saving: false })
     this.context.router.push('/courses')
   }
 
@@ -54,7 +57,8 @@ class ManageCourse extends Component {
           course={this.state.course}
           errors={this.state.errors} 
           onChange={this.updateCourseState} 
-          onSave={this.saveCourse}/>
+          onSave={this.saveCourse}
+          saving={this.state.saving} />
       </div>
     )
   }
