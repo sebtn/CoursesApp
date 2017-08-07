@@ -9,6 +9,8 @@ export let beginAjaxCall = () => {
     type: types.BEGIN_AJAX_CALL
   }
 }
+
+/*---------------------------------------------------------------*/
 export let ajaxCallError = () => {
   return {
     type: types.AJAX_CALL_ERROR
@@ -40,7 +42,6 @@ export let createCourseSuccess = (course) => {
     course
   }
 }
-
 
 /*Authors*/
 /*---------------------------------------------------------------*/

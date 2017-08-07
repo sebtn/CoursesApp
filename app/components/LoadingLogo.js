@@ -30,7 +30,7 @@ class LoadingLogo extends Component {
       text += '.'
       dots-- 
     }
-    return <span>{text}</span> 
+    return <span><h4>{text}</h4></span>
   }
 }
 
