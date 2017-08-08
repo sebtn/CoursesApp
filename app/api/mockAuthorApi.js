@@ -5,6 +5,11 @@ const authors = [
     id: 'Seb-machines',
     firstName: 'Seb',
     lastName: 'Ag'
+  },  
+  {
+    id: 'SebTn',
+    firstName: 'Ese',
+    lastName: 'Zes'
   },
   {
     id: 'Cat-machines',

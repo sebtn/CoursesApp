@@ -21,9 +21,11 @@ module.exports = (config) => {
 		singleRun: false,
 		autoWatch: true,
 		frameworks: ['mocha'],
-		files: ['app/tests/components/test_index.js'],
+		// files: ['app/tests/components/test_index.js'],
+		files: ['app/tests/components/*.js'],
 		preprocessors: {
-			'app/tests/components/test_index.js': ['webpack', 'sourcemap']
+			// 'app/tests/components/test_index.js': ['webpack', 'sourcemap']
+			'app/tests/components/*.js': ['webpack', 'sourcemap']
 		},
 		reporters: ['mocha'],
 		client: {

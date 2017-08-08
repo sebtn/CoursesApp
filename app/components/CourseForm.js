@@ -7,7 +7,7 @@ import SelectInput from './SelectInput'
 const CourseForm = ({course, allAuthors, onSave, onChange, saving, errors}) =>{
   return (
     <div className="form-container">
-      <form >
+      <form>
       <h1>Manage Course</h1>
         <TextInput 
           name="title"
