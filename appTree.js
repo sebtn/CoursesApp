@@ -48,6 +48,7 @@
 │   └── tests
 │       └── components
 │           ├── CourseForm.test.js
+│           ├── ManageCourse.test.js
 │           └── test_index.js
 ├── appTree.js
 ├── karma.conf.js
@@ -59,4 +60,4 @@
 ├── server.js
 └── webpack.config.js
 
-12 directories, 47 files
+12 directories, 48 files
