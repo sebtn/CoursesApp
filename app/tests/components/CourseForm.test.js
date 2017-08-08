@@ -24,7 +24,7 @@ let setup = (saving) => {
   }
 }
 
-// CourseForm
+/* CourseForm */
 /*----------------------------------------------------------*/
 describe('Course Form Testing' + '\n', () => {
 

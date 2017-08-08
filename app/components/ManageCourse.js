@@ -8,7 +8,7 @@ import Header from './Header'
 import CourseForm from './CourseForm'
 import {saveCourse} from '../actions/index'
 
-class ManageCourse extends Component {
+export class ManageCourse extends Component {
 /*--------------------------------------------------*/
   constructor(props, context) {
     super(props, context)
